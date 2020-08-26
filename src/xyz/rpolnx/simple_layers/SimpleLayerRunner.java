@@ -91,9 +91,9 @@ public class SimpleLayerRunner {
 
     public static void main(String[] args) throws Exception {
         try {
-            Person person = new Person(1L, "Person 1", "01234567891", LocalDate.of(1990, 10, 1));
-            Person person2 = new Person(2L, "Person 2", "01234567892", LocalDate.of(1991, 11, 2));
-            Person person3 = new Person(3L, "Person 3", "01234567893", LocalDate.of(1992, 12, 3));
+            Person person = new Person("Person 1", "01234567891", LocalDate.of(1990, 10, 1));
+            Person person2 = new Person("Person 2", "01234567892", LocalDate.of(1991, 11, 2));
+            Person person3 = new Person("Person 3", "01234567893", LocalDate.of(1992, 12, 3));
 
             // Layers creation
             PersonRepository personRepository = new PersonRepository();
@@ -113,7 +113,8 @@ public class SimpleLayerRunner {
             List<Person> people = personController.getPeople();
             System.out.println("Current database is: " + people);
 
-            Person personWithWrongAge = new Person(3L, "Person 3", "01234567893", LocalDate.of(2010, 12, 3));
+
+            Person personWithWrongAge = new Person("Person 3", "01234567893", LocalDate.of(2010, 12, 3));
 
             personController.handleRequest(personWithWrongAge);
 

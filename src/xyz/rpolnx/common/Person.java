@@ -12,6 +12,12 @@ public class Person {
     public Person() {
     }
 
+    public Person(String name, String cpf, LocalDate birthday) {
+        this.name = name;
+        this.cpf = cpf;
+        this.birthday = birthday;
+    }
+
     public Person(Long id, String name, String cpf, LocalDate birthday) {
         this.id = id;
         this.name = name;
