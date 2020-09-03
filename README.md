@@ -1,5 +1,8 @@
 # Java Layers Example
 
+## Introduction
+This project is just an example for a friend from beginning to advanced using layers.
+
 ## Basic
 - Person
 - List
