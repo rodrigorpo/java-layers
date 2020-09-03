@@ -9,6 +9,8 @@ public class Person {
     private String cpf;
     private LocalDate birthday;
 
+    private static final long MAX_ID = 1000000L;
+
     public Person() {
     }
 
@@ -23,6 +25,11 @@ public class Person {
         this.name = name;
         this.cpf = cpf;
         this.birthday = birthday;
+    }
+
+    public Person withNewId() {
+        this.id = (long) (Math.random() * MAX_ID);
+        return this;
     }
 
     public Long getId() {
