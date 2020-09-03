@@ -14,7 +14,7 @@ class PersonController {
         this.personService = personService;
     }
 
-    public Long handleRequest(Person person) throws Exception {
+    public Long createPerson(Person person) throws Exception {
 
         if (person == null) {
             throw new Exception("Person object cannot be null");
@@ -101,9 +101,9 @@ public class SimpleLayerRunner {
             PersonController personController = new PersonController(personService);
 
 
-            Long personOneId = personController.handleRequest(person);
-            Long personTwoId = personController.handleRequest(person2);
-            Long personThreeId = personController.handleRequest(person3);
+            Long personOneId = personController.createPerson(person);
+            Long personTwoId = personController.createPerson(person2);
+            Long personThreeId = personController.createPerson(person3);
 
             System.out.println("Created person one with id: " + personOneId);
             System.out.println("Created person one with id: " + personTwoId);
@@ -116,7 +116,7 @@ public class SimpleLayerRunner {
 
             Person personWithWrongAge = new Person("Person 3", "01234567893", LocalDate.of(2010, 12, 3));
 
-            personController.handleRequest(personWithWrongAge);
+            personController.createPerson(personWithWrongAge);
 
         } catch (Exception e) {
             System.out.println("User creation failed with error: " + e.getMessage());
